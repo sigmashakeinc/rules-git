@@ -39,10 +39,9 @@ rule ask-amend-commit {
   enabled true
   priority 75
   severity warning
-  ASK execution
+  LOG execution
   IF command CONTAINS "git commit --amend"
   MESSAGE "Amending commits rewrites history. If this commit has been pushed to a shared branch, amending requires a force push which affects others."
-  PROMPT "Has this commit been pushed to a remote? If so, amending requires a force push which rewrites shared history."
 }
 
 rule log-merge-commit {
